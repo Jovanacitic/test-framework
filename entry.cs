@@ -23,10 +23,14 @@ class EntryPoint
 
     private static void RedMessage(string message)
     {
-        throw new NotImplementedException();
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine(message);
+        Console.ForegroundColor = ConsoleColor.White;
     }
     private static void GreenMessage(string message)
     {
-        throw new NotImplementedException();
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine(message);
+        Console.ForegroundColor = ConsoleColor.White;
     }
 }
