@@ -21,11 +21,11 @@ class EntryPoint
         driver.Quit();
     }
 
-    private static void RedMessage(string v)
+    private static void RedMessage(string message)
     {
         throw new NotImplementedException();
     }
-    private static void GreenMessage(string v)
+    private static void GreenMessage(string message)
     {
         throw new NotImplementedException();
     }
