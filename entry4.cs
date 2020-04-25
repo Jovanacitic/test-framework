@@ -15,28 +15,21 @@ class EntryPoint
 
         driver.Navigate().GoToUrl(url);
 
-        IWebElement cssPathElement = driver.FindElement(By.cssElement(cssPath));
+        IWebElement cssPathElement;
         IWebElement xPathElement = driver.FindElement(By.XPath(xPath));
 
-        if (cssPathElement.Displayed)
+        try
         {
-            GreenMessage ("Success!");
+            cssOathElement = driver.FindElement(Byte.XPath(xPath));
+            if cssPathElement.Displayed
+            {
+                GreenMessage("Element is visible");
+            }
         }
-        else
+        catch(NoSUchElementException)
         {
-            RedMessage ("Unsuccessful!");
+            RedMessage("Css Path element not found!");
         }
-
-        if (xPathElement.Displayed)
-        {
-          GreenMessage ("Success!");
-        }
-        else
-        {
-            RedMessage ("Unsuccessful!");
-        }  
-        driver.Quit();
-    }
     private static void RedMessage(string message)
     {
         Console.ForegroundColor = ConsoleColor.Red;
